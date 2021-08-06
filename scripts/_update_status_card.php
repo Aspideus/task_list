@@ -25,7 +25,7 @@
         }
 
 
-    //mysqli_close($link);
-    //header('Location: ../index.php');
-    //die();
+    mysqli_close($link);
+    header('Location: ../index.php');
+    die();
 ?>
