@@ -1,0 +1,518 @@
+:root {
+    --color-primary: #6B7E89; /*#010125*/
+    --color-bg: #f0f0f0; /*#f0f0f0*/
+    --color-secondary: #f8f9fa; /*#f8f9fa*/
+    --color-for-cards: #FAF7F3; /*#fff*/
+    --color-font: #000;
+    --color-suspended: #fed0c3;/*#ffc7c3*/
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg);
+    font-family: Ubuntu;
+    color: var(--color-font);
+}
+#container {
+    max-width: 1920px;
+    text-align: center;
+    margin: 0px auto;
+}
+/* header */
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    color: var(--color-secondary);
+}
+#header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary);
+}
+.header_body {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    margin: auto;
+    max-width: 1410px;
+}
+.header_list, .footer_list {
+    display: flex;
+}
+.header_list > li, .footer_list > li {
+    list-style: none;
+    margin: 0px 0px 0px 20px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: var(--color-primary);
+}
+.header_link {
+    flex-direction: row;
+    color: var(--color-bg);
+    text-transform: uppercase;
+    font-size: 20px;
+    text-decoration: none;
+}
+/* */
+/* footer */
+#footer {
+    position: fixed;
+    top: 95%;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    height: 5%;
+    color: var(--color-secondary);
+}
+#footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary);
+}
+.footer_body {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    max-width: 1410px;
+    text-align: center;
+    height: -webkit-fill-available;
+}
+.footer_text {
+    text-align: end;
+    font-size: 25px;
+}
+
+.main_stream {
+    margin: 110px auto;
+    margin-bottom: 6%;
+}
+/**/
+.popup_window {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    font-family: Ubuntu;
+
+}
+.popup_container {
+    position: relative;
+    top: 50px;
+    width: 60vw;
+    margin: 0 auto;
+    background-color: var(--color-for-cards);
+    border-radius: 15px;
+    padding: 20px 60px;
+    z-index: 3;
+
+}
+.pc_submit {
+    margin: 0 auto;
+    margin-top: 25px;
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 5px;
+
+    width: 20%;
+    max-width: 135px;
+
+    background-color: var(--color-bg);
+    outline: none;
+    border: 1px solid var(--color-primary);
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: var(--color-font);
+}
+
+.popup_close {
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    float: right;
+}
+.popup_close:hover, .pc_submit:hover {
+    cursor: pointer;
+}
+
+.popup_body {
+    width: 100%;
+}
+.popup_body form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.popup_title {
+    flex: 0 0 100%;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+.popup-label {
+    font-size: 16px;
+    flex: 0 0 30%;
+    text-align: end;
+    padding: 5px;
+    margin: 5px 0px;
+}
+
+.popup_body input, .popup_body select, .popup_body textarea{
+    font-size: 16px;
+    flex: 0 0 70%;
+    padding: 5px;
+    margin: 5px 0px;
+}
+.popup_vertical_space {
+    content: '';
+    margin-top: 20px;
+    flex: 0 0 100%;
+}
+.del_left {
+    margin-right: 15px;
+}
+.del_right {
+    margin-left: 15px;
+}
+.hidden_elem {
+    display: none;
+}
+
+.popup_close_area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+.popup_close_area:hover {
+    cursor: pointer;
+}
+/**/
+.task_card {
+    display: flex;
+    margin: 15px auto;
+    padding: 15px 20px;
+    background-color: var(--color-for-cards);
+    flex-wrap: wrap;
+    max-width: 1000px;
+    border-radius: 15px;
+    word-break: break-all;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+.task_card:hover {
+    box-shadow: none;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 5%), 0px 4px 5px 0px rgb(0 0 0 / 5%), 0px 1px 10px 0px rgb(0 0 0 / 5%);
+  }
+.task_date {
+    flex: 0 0 50%;
+    text-align: start;
+    float: left;
+    margin-top: 10px;
+    font-size: 14px;
+    align-self: flex-end;
+}
+.task_delete {
+    flex: 0 0 50%;
+    margin-top: 10px;
+}
+.task_delete button {
+    max-width: 200px;
+    float: right;
+}
+.task_name {
+    flex: 0 0 100%;
+    text-align: start;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+.task_title {
+    flex: 0 0 100%;
+    text-align: start;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.task_descr {
+    flex: 0 0 100%;
+    text-align: start;
+}
+.task_status {
+    flex: 0 0 50%;
+    text-align: start;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.task_suspended {
+    background-color: var(--color-suspended);
+    border: 1px solid brown;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 60%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+.order_menu a {
+    text-decoration: none;
+    padding: 5px 2px;
+}
+.order_menu a:hover {
+    text-decoration: underline;
+}
+
+
+
+.task_card button, .header_list button{
+    background-color: var(--color-bg);
+    outline: none;
+    border: 1px solid var(--color-primary);
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: var(--color-font);
+    width: 150px;
+}
+.header_list button {
+    background-color: var(--color-secondary);
+    color: var(--color-font);
+    border: 1px solid var(--color-for-cards);
+    width: 200px;
+}
+.pagination {
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+    max-width: 970px;
+    
+}
+.one_item {
+    flex-flow: column;
+}
+
+.mobile_view, .order_mobile__button {
+    display: none;
+}
+
+.mobile-break, .mobile__button {
+    display: none;
+}
+
+@media (max-width: 1425px) {
+    .footer_body {
+        margin-left: 15px;
+    }
+    .header_body h1 {
+        margin-left: 15px;
+    }
+    
+    .header_menu {
+        margin-right: 15px;
+    }
+}
+@media (max-width: 1001px) {
+    .footer_body {
+        display: inline-flex;
+        margin-left: 0px;
+    }
+    .task_card {
+        margin: 15px;
+    }
+    .pagination {
+        margin: 15px;
+    }
+
+}
+@media (max-width: 800px) {
+    #footer{
+        display: none;
+    }
+    .main_stream {
+        margin-bottom: 15px;
+    }
+    .popup_container {
+        top: 0px;
+        width: calc(100vw - 30px);
+        margin: 15px;
+    }
+    .pagination {
+        font-size: 20px;
+        
+    }
+    .pagination a {
+        text-decoration: none;
+    }
+
+    .desktop_view {
+        display: none;
+    }
+    .mobile_view {
+        display: initial;
+    }
+    .order_mobile__button {
+        display: flex;
+        border: 1px solid var(--color-font);
+        background-color: var(--color-for-cards);
+        border-radius: 15px;
+        padding: 10px 15px;
+        margin: 15px;
+        text-align: center;
+        place-content: center;
+
+    }
+    .order_body span {
+        font-size: 28px;
+        flex: 0 0 100%;
+        padding: 10px 0px;
+    }
+    .hidden_elem__mobile {
+        display: none;
+    }
+
+    .order_menu {
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        bottom: 0%;
+        background-color: rgba(0, 0, 0, 0.65);
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        font-family: Ubuntu;
+    
+    }
+    .order_body {
+        position: relative;
+        margin: 15px;
+        margin-top: 100px;
+        background-color: var(--color-for-cards);
+        border-radius: 15px;
+        padding: 20px 60px;
+        z-index: 3;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .order_close {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+    }
+    .order_body a {
+        flex: 0 0 100%;
+        font-size: 24px;
+        padding: 10px 0px;
+        border-top: 1px solid var(--color-font);
+    }
+    .task_card button span {
+        display: none;
+    }
+    .header_list span {
+        display: none;
+    }
+    .task_card button, .header_list button {
+        width: 60px;
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        text-align: end;
+    }
+    .task_date {
+        align-self: auto;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    .mobile-break {
+        display: initial;
+    }
+    .mobile__button {
+        display: initial;
+        width: 100%;
+        height: 32px;
+        width: 32px;
+
+        height: 24px;
+        width: 24px;
+    }
+    .one_item .mobile__button {
+        width: 32px;
+    }
+    .mobile_add {
+        width: 40px;
+        height: 40px;
+    }
+    .popup-label {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+    .popup_body input, .popup_body select, .popup_body textarea {
+        flex: 0 0 100%;
+    }
+    .pc_submit {
+        width: 100%;
+    }
+    .popup_container {
+        padding: 20px 30px;
+    }
+    .popup_window {
+        overflow-y: scroll !important;
+    }
+}
+@media (max-width: 600px) {  
+    .pc_submit {
+        width: 100%;
+        max-width: none;
+    }
+    .del_left, .del_right {
+        margin: 10px 0;
+    }
+}
+@media (max-width: 400px) {
+    .popup_title {
+        font-size: 20px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
+@media (max-width: 325px) { 
+    h1 {
+        font-size: 20px;
+    }
+}
