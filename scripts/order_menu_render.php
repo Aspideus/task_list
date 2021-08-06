@@ -4,7 +4,7 @@
     <div class="order_body">
     <?php 
         if (isset($_GET["tags"]))
-            echo '<a href="/" class="">Показать все</a>';
+            echo '<a href="/" class="show_all">Показать все</a>';
     ?>
     <span>Сортировка:</span>
     <a href="/?tags=task_name">по исполнителю</a>
