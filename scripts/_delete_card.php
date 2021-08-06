@@ -19,7 +19,7 @@
         }
 
 
-    //mysqli_close($link); //надо сделать защиту от скл инъекций, хоть это и бессмысленно
-    //header( 'Location: ../index.php');
-    //die();
+    mysqli_close($link); //надо сделать защиту от скл инъекций, хоть это и бессмысленно
+    header( 'Location: ../index.php');
+    die();
 ?>
